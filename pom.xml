@@ -136,9 +136,10 @@
 		</dependency>
 		<!-- 通用mapper -->
 		<dependency>
-			<groupId>com.github.abel533</groupId>
+			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper</artifactId>
-			<version>3.0.1</version>
+			<!-- 建议使用最新版本,最新版本请从项目首页查找 -->
+			<version>3.3.8</version>
 		</dependency>
 		<!-- jackjson -->
 		<dependency>
@@ -164,7 +165,7 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.0.1</version>
 				<configuration>
-				<encoding>utf-8</encoding>
+					<encoding>utf-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
