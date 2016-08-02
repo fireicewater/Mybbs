@@ -8,15 +8,14 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">  
 
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan   base-package="controller"/>
-     <mvc:default-servlet-handler />
-     <mvc:annotation-driven />
-    <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-         <property name="prefix" value="/WEB-INF/jsp/" />  
-        <property name="suffix" value=".jsp" />  
-    </bean>
-         <!-- 对静态资源文件的访问-->  
+     <mvc:annotation-driven/>
+     <context:component-scan   base-package="com.mybbs.controller"/>
+    <!-- 视图解析器:定义跳转的文件的前后缀 -->    
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">    
+        <property name="prefix" value="/WEB-INF/jsp/" />    
+        <property name="suffix" value=".jsp" />  <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑  -->  
+    </bean>    
+    <!-- 对静态资源文件的访问-->  
     <mvc:resources mapping="/images/**" location="/WEB-INF/images/" cache-period="31556926"/>  
     <mvc:resources mapping="/js/**" location="/WEB-INF/js/" cache-period="31556926"/>  
     <mvc:resources mapping="/css/**" location="/WEB-INF/css/" cache-period="31556926"/> 
